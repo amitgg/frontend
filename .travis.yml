@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+serivces:
+  - docker
+
+before_install:
+  - docker build--t amitgg/docker-react f Dockerfile.dev .
+
+script:
+  - docker run amitgg/docker-react npm run test -- --coverage
