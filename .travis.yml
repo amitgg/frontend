@@ -7,4 +7,4 @@ before_install:
   - docker build -t amitgg/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run amitgg/docker-react npm run -e CI=true test -- --coverage
+  - docker run -e CI=true  amitgg/docker-react npm run test -- --coverage
